@@ -4,7 +4,8 @@ using WebApp.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddScoped<IPersonRepository<StudentModel>, StudentRepository>();
+builder.Services.AddKeyedScoped<IPersonRepository<StudentModel>, StudentRepository>("student");
+builder.Services.AddKeyedScoped<IPersonRepository<TeacherModel>, TeacherRepository>("teacher");
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

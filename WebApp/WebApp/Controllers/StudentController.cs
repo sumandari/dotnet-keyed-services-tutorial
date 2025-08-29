@@ -6,12 +6,12 @@ using WebApp.Repositories;
 namespace WebApp.Controllers;
 
 [ApiController]
-[Route("api/student")]
+[Route("api/[controller]")]
 public class StudentController: ControllerBase
 {
     private readonly IPersonRepository<StudentModel> _student;
 
-    public StudentController(IPersonRepository<StudentModel> student)
+    public StudentController([FromKeyedServices("student")] IPersonRepository<StudentModel> student)
     {
         _student = student;
     }
@@ -28,7 +28,8 @@ public class StudentController: ControllerBase
             Name = studentName,
             Age = studentAge
         };
-        var studentInfo = _student.GetPerson(studentModel);
+        var studentInfo =
+ _student.GetPerson(studentModel);
         return Ok(studentInfo);
     }
 }
