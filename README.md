@@ -1,7 +1,7 @@
 ## Using Keyed Services in WebApi Dependency Injection
 
-- Checkout to commit sha `285a8588` to see the simple WebApi project without keyed services.
-- Checkout to commit sha `54d51d00` to see the updated WebApi project with keyed services.
+- Checkout tag `without-keyed-service` to see the simple WebApi project without keyed services.
+- Checkout tag `implement-keyed-service` to see the updated WebApi project with keyed services.
 
 ### Keyed Services Overview
 
